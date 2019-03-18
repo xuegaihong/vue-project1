@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- v-model 主要是用于表单上数据的双向绑定 -->
+		<div id="app">
+			{{msg}}
+			<input type="text" v-model="msg">
+			<!-- 取值，双向绑定 -->
+		</div>
+	</body>
+	<script type="text/javascript">
+		// v-model 双向数据绑定
+		// 双向数据绑定原理---object.defineProperty()  底层原理：setter getter
+		new Vue({
+			el:'#app',
+			data:{
+				msg:'111'
+			}
+		})
+	</script>
+</html>
+<!-- 
+在 node中遇到错误，如何把错误抛出
+ -->

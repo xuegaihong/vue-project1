@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>	
+		
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!--默认false不存在-->
+			<!--<div v-show="" style="width: 100px;height: 100px;background: darkblue;"></div>-->
+			<!--默认true存在   fasle删除DOM结点-->
+			<div v-if="" style="width: 100px;height: 100px;background: darkblue;"></div>
+			
+			<!-- v-if v-else-if v-else一块使用-->
+			<div v-if="hide==3" style="width: 100px;height: 100px;background: darkblue;"></div>
+			
+			<div v-else-if="show==2" style="width: 100px;height: 100px;background: red;"></div>
+
+			<div v-else style="width: 100px;height: 100px;background: yellow;"></div>
+<!-- <button @click="toggle">按钮</button>
+			<div v-show="hide" style="width: 100px;height: 100px;background: darkblue;"></div> -->
+
+		</div>
+	</body>
+	<script type="text/javascript">
+//		class: 字符串 数组 对象
+		new Vue({
+			el:'#app',
+			data:{
+				hide:true,
+				hide:2,
+				show:4
+
+				
+			}/* ,
+			methods:{
+				toggle(){
+					this.hide=!this.hide
+				}
+			} */
+			
+		})
+	</script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+    <style>
+    button{
+        width:40px;
+        height:30px;
+        text-align:center;
+        border:none;
+        cursor: pointer;
+    }
+    .active{
+        background:red;
+        color:#fff;
+        border:none;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+		<!-- 
+		循坏
+		点击时传值
+		将索引值传入class（索引等于几就第几个添加active类）
+		 -->
+        <!-- <button  v-for="(val,key) in box" @click="changes(key)":class="{active:key == num}" >{{key+1}}</button> -->
+		<button  v-for="(val,key) in box" @click="active(key)":class="{active:key == num}" >{{key+1}}</button>
+        <div class="box" v-for="(val,key) in box" v-show="key==num">{{val}}</div>
+		<!-- v-show 默认隐藏 -->
+    </div>
+    <script>
+    /*
+    运用知识点：
+        v-for
+        v-on,简写@
+        v-bind简写:
+        v-show
+    思路：
+        循环数据，当点击时候，把key传到changes方法中，然后num赋值给active
+        循环数组，只要box中key等于num就让它显示出来
+    */
+   new Vue({
+       el:'#app',
+       data:{
+          box:['a','b','c'],
+          num:0
+       },
+       methods:{
+           active(key){
+               this.num = key;
+           }
+       }
+   });
+    </script>
+</body>
+</html>
+   
+   
+<!--  
+   // html
+    <ul class="box">
+       <li v-for='value,index in msg'>值:{{value}}   索引:{{index}} </li>  循环数组
+       <hr />
+       <li v-for='value,key,index in msg2'>值:{{value}} 键:{{key}}  索引:{{index}}</li>json数组
+   </ul>
+   	 
+   
+   // js
+var box=new Vue({
+  　 el:'.box',
+     data:{
+        msg:['hello','ok','dome'],    //定义一个数组
+        msg2:{a:'ok',b:"hello"}　　　　//定义一个对象
+     }
+ })
+   -->
+ 

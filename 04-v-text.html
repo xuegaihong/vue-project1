@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-text="msg"></li>
+				<li>{{msg}}</li>
+				<li v-html="msghtml"></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			// 定义变量
+			data:{
+				msg:'oooo',
+				msghtml:"<h2>hello</h2>"
+			}
+		})
+	</script>
+</html>

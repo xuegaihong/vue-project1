@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+
+		<div @click="parent" style="width: 200px;height: 180px; background-color: #FA8072;">
+			<!-- <div @click="child" style="width:90px;height:90px; background-color: lawngreen;"> -->
+			<div @click.stop="child" style="width:90px;height:90px; background-color: lawngreen;">
+				
+			</div>
+		</div>
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		//		class: 字符串 数组 对象
+		new Vue({
+			el: '#app',
+			data: {
+				hide: true,
+				hide: 2,
+				show: 4
+			},
+			methods: {
+				parent(){
+				console.log('parent')
+				},
+				child(ev){
+					var ev=ev||event
+					console.log('child')
+					ev.cancleBubble=true
+					// ev.stopPropagation()
+				}
+				
+				
+			}
+			
+
+		})
+	</script>
+
+</html>

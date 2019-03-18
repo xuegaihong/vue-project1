@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--监听键盘事件-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+	<script src="vue.min.js"></script>
+</head>
+<body>
+	<!-- 在监听键盘事件时，我们常常需要检查常见的键值。Vue允许v-on在监听键盘事件时添加按键修饰符 -->
+	<div id="app">
+<!-- 获取焦点， 触发对应的事件 -->
+		<!-- <input type="text" v-on:keyup.enter.space="alertMe" > -->
+		<!-- .delete（捕获“删除”和”退格“键） -->
+		<!-- <input type="text" v-on:keyup.delete="alertMe" > -->
+		<!-- .esc -->
+		<!-- <input type="text" v-on:keyup.esc="alertMe" > -->
+		<!-- left down up right -->
+		<!-- <input type="text" v-on:keyup.left.down.up.right.stop="alertMe" > -->
+		<input type="text" v-on:keyup.tab="alertMe" >
+              
+	</div>
+	
+ <script>
+   new Vue({
+  el:'#app',
+  methods:{
+  	alertMe:function(){
+  		alert("Alert!!!");
+		var ev=ev||event
+		console.log('child')
+		ev.cancleBubble=true
+  	}
+  }
+ 	})
+ </script>
+</body>
+</html>

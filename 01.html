@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<!-- {{}}插值表达式 -->
+		<!-- 作用：	解析变量进行运算 -->
+		<div id="app">{{msg==1?"正确":"错误"}}</div>
+	</body>
+	
+	<script type="text/javascript">
+		// 实例vue对象
+		new Vue({
+			el:"#app",
+			/* data:function(){
+				msg:'1122'
+			},//ReferenceError: msg is not defined
+			 */
+			// 针对html,data相当于一个仓库,存放变量
+			data:{
+				msg:'1122'
+			},
+			//1
+			/* data(){
+				msg:'1122'
+			}//ReferenceError: msg is not defined */
+			//2
+				/* data(){
+					return{
+					msg:'1122'	
+					}
+					
+				} */
+		})
+	</script>
+</html>

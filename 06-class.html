@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>	
+		
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 字符串 -->
+			<div :style="win"></div>
+		
+		</div>
+	</body>
+	<script type="text/javascript">
+//		class: 字符串 数组 对象
+		new Vue({
+			el:'#app',
+			data:{
+				a:'red',
+				b:true,
+				//可以解析js语句
+				win:{
+					width:window.clientwidth+'px',
+					height:'100px',
+					background:'red'
+				}
+				
+			},
+			
+		})
+	</script>
+
+</html>

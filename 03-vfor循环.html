@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- v-for循坏 -->
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in arr" :key="index">{{item}}-------{{index}}</li>
+				<li v-for="data in json">{{data.name}}</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			// 定义变量
+			data:{
+				arr:["1","2","5"],
+				json:[
+					{"name":"a"},
+					{"name":"b"},
+					{"name":"c"}
+				]
+			}
+		})
+	</script>
+</html>

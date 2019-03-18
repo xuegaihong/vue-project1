@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>	
+		
+		div{
+			width:100px;
+			height:100px;
+			border:6px solid yellow;
+		}
+		.red{
+			background:red;
+		}
+		.green{
+			background:green;
+		}
+		.dashed{
+			border:6px solid pink;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 字符串 -->
+			<!--<div v-bind:class="a"></div>-->
+			<!-- 数组 -->
+			<!--<div v-bind:class="['red','dashed']"></div>-->
+			<!-- 对象 -->
+			<div v-bind:class="{'red':b}"></div>
+			<!-- 三目运算  -->
+			<!-- <div v-bind:class="b?'green':'red'"></div> -->
+			<!-- : 出现就知道是v-bind  -->
+			<!--<div :class="b?'green':'red'"></div>-->
+		</div>
+	</body>
+	<script type="text/javascript">
+//		class: 字符串 数组 对象
+		new Vue({
+			el:'#app',
+			data:{
+				a:'red',
+				b:true
+			},
+			
+		})
+	</script>
+	<body>
+<div id="app">
+    <p v-bind:title="obj">content</p>
+</div>
+<script type="text/javascript">
+obj.toString = function () {
+    var str = '';
+    for(var i in this) {
+        str += i + ': ' + this[i] + '; ';
+    }
+    return str;
+};
+
+// 防止 toString 方法自身被遍历出来
+Object.defineProperty(obj, 'toString', {'enumerable': false});
+
+var vm = new Vue({
+    el: '#app',
+    data: {
+        obj: obj
+    }
+});
+</script>
+
+	</body>
+</html>
